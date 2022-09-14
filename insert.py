@@ -1,12 +1,13 @@
-import sqlite3
+def insert(RollNo, StudName, PhyMarks, CheMarks, MathMarks):
 
-con = sqlite3.connect('StudDetails01.db')
-
-cur = con.cursor()
-
-cur.execute('''INSERT INTO StudDetails01 (RollNo, StudName, PhyMarks,CheMarks, MathMarks)  VALUES (101, 'MAN', 70, 80, 56)''')
-
-cur.execute('''INSERT INTO StudDetails01 (RollNo, StudName, PhyMarks,CheMarks, MathMarks)  VALUES (102, 'WOMEN', 77, 88, 77)''')
-
-con.commit()
-con.close()
+    import sqlite3
+    con = sqlite3.connect('StudDetails01.db')
+    cur = con.cursor()
+    RollNo = input("Enter RollNo = ")
+    StudName = input("Enter Student Name = ")
+    PhyMarks = input("Enter Phy Marks = ")
+    CheMarks = input("Enter Che Marks = ")
+    MathMarks = input("Enter Math Marks = ")
+    cur.execute('''INSERT INTO StudDetails01 (RollNo, StudName, PhyMarks, CheMarks, MathMarks) VALUES(?,?,?,?,?)''', (RollNo, StudName, PhyMarks, CheMarks, MathMarks))
+    con.commit()
+    con.close()
