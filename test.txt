@@ -1,1 +1,2 @@
 This line is added in newpython
+added newline in newpython
