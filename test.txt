@@ -1,5 +1,1 @@
-hello
-bye
-..
-mmm
-okay
+This line is added in newpython
